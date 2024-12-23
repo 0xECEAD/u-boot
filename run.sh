@@ -7,6 +7,7 @@ IMGFILE=${OUTPATH}/Mirari.img
 mkdir -p ${OUTPATH}
 make O=${OUTPATH} distclean
 make O=${OUTPATH} Mirari_SDCARD_defconfig
+# make O=${OUTPATH} menuconfig
 make O=${OUTPATH} all -j $(nproc)
 
 cat board/freescale/mirari/default_env_strings | sort | ${OUTPATH}/tools/mkenvimage -b -p 0 -s 8192 -o ${OUTPATH}/mirari-env -
