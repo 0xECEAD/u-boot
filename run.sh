@@ -15,12 +15,12 @@ cat board/freescale/mirari/default_env_strings | sort | ${OUTPATH}/tools/mkenvim
 # Create the image file for writting to the SD card.
 #
 # u-boot.pbl is at 8 blocks (0x1000 bytes)
-# default environment is at 1800 (0xE1000 bytes)
+# default environment is at 2048 (0x100000 bytes)
 # amigaboot is at 16384 blocks (0x800000 bytes)
 # data image blob is at 18432 blocks (0x900000 bytes)
 #
 rm -f ${IMGFILE}
 dd if=${OUTPATH}/u-boot-with-spl-pbl.bin of=${IMGFILE} bs=512 seek=8 conv=notrunc
-dd if=${OUTPATH}/mirari-env of=${IMGFILE} bs=512 seek=1800 conv=notrunc
+dd if=${OUTPATH}/mirari-env of=${IMGFILE} bs=512 seek=2048 conv=notrunc
 #dd if=amigaboot of=${IMGFILE} bs=512 seek=16384 conv=notrunc
 #dd if=dataimage of=${IMGFILE} bs=512 seek=18432 conv=notrunc
