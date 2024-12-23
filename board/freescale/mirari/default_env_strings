@@ -1,0 +1,41 @@
+amigaboot_quiet=y
+amigabootmenu_default=0
+amigabootmenu_timeout=0
+amigabootmenu_animate=1
+amigabootmenu_animcycles=1
+amigabootmenu_delay=1
+baudrate=115200
+bdev=sda3
+bootable_only=y
+bootargs=root=/dev/sda2 mem=3500M console=ttyS0,115200 console=tty0
+bootargs_live=root=/dev/ramdisk boot=casper mem=3500M ro --
+bootargs_live_debug=root=/dev/ramdisk boot=casper mem=3500M ro break debug
+bootcmd=setenv bootargs root=/dev/$bdev rw console=$consoledev,$baudrate $othbootargs;tftp $loadaddr $bootfile;tftp $fdtaddr $fdtfile;bootm $loadaddr - $fdtaddr
+bootdelay=3
+bootdvd=scsi reset ; load scsi 0 2000000 boot_dvd ; bootm 2000000
+bootfile=uImage
+consoledev=ttyS0
+ethact=FM1@DTSEC4
+ethernetboot=echo ethernetboot is not defined
+ethprime=FM1@DTSEC4
+fdtaddr=c00000
+harddiskboot=sata init;boota
+linuxboot=echo linuxboot is not defined
+liveusb=usb start ; setenv bootargs_live_debug ; ext2load usb 1:1 2000000 boot_dvd ; bootm 2000000
+loadaddr=1000000
+massboot=usb reset;boota
+netdev=eth0
+nfsboot=setenv bootargs root=/dev/nfs rw nfsroot=$serverip:$rootpath ip=$ipaddr:$serverip:$gatewayip:$netmask:$hostname:$netdev:off console=$consoledev,$baudrate $othbootargs;tftp $loadaddr $bootfile;tftp $fdtaddr $fdtfile;bootm $loadaddr - $fdtaddr
+opticalboot=echo opticalboot is not defined
+os4_bootdevice=auto
+os4_commandline=debug munge debuglevel=0
+preboot=amigabootmenu
+ramboot=setenv bootargs root=/dev/ram rw console=$consoledev,$baudrate $othbootargs;tftp $ramdiskaddr $ramdiskfile;tftp $loadaddr $bootfile;tftp $fdtaddr $fdtfile;bootm $loadaddr $ramdiskaddr $fdtaddr
+ramdiskaddr=2000000
+ramdiskfile=ramdisk.uboot
+rootpath=/opt/nfsroot
+scsidevs=1
+stdin=usbkbd
+uboot=u-boot.bin
+ubootaddr=0xFFF80000
+hwconfig=fsl_ddr:ctlr_intlv=cacheline,bank_intlv=cs0_cs1;usb1:dr_mode=host,phy_type=utmi;usb2:dr_mode=host,phy_type=utmi
