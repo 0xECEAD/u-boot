@@ -1,0 +1,10 @@
+
+config SYS_BOARD
+	default "mirari"
+
+config SYS_VENDOR
+	default "freescale"
+
+config SYS_CONFIG_NAME
+	default "mirari"
+

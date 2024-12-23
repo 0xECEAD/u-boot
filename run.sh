@@ -2,11 +2,11 @@ CROSS_COMPILE=powerpc-linux-gnu-
 export CROSS_COMPILE
 
 OUTPATH=~/mirari-uboot
-IMGFILE=${OUTPATH}/Mirari.img
+IMGFILE=${OUTPATH}/mirari.img
 
 mkdir -p ${OUTPATH}
 make O=${OUTPATH} distclean
-make O=${OUTPATH} Mirari_SDCARD_defconfig
+make O=${OUTPATH} mirari_SDCARD_defconfig
 # make O=${OUTPATH} menuconfig
 make O=${OUTPATH} all -j $(nproc)
 

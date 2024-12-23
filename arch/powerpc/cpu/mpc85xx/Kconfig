@@ -210,6 +210,15 @@ config TARGET_T1042D4RDB
 	select SYS_L3_SIZE_256KB
 	imply PANIC_HANG
 
+config TARGET_MIRARI
+	bool "Support Mirari"
+	select ARCH_T1042
+	select BOARD_LATE_INIT if CHAIN_OF_TRUST
+	select SUPPORT_SPL
+	select PHYS_64BIT
+	select SYS_L3_SIZE_256KB
+	imply PANIC_HANG
+
 config TARGET_T2080QDS
 	bool "Support T2080QDS"
 	select ARCH_T2080
@@ -1537,6 +1546,7 @@ source "board/freescale/p1_p2_rdb_pc/Kconfig"
 source "board/freescale/p2041rdb/Kconfig"
 source "board/freescale/t102xrdb/Kconfig"
 source "board/freescale/t104xrdb/Kconfig"
+source "board/freescale/mirari/Kconfig"
 source "board/freescale/t208xqds/Kconfig"
 source "board/freescale/t208xrdb/Kconfig"
 source "board/freescale/t4rdb/Kconfig"

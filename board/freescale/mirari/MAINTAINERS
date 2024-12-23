@@ -1,0 +1,6 @@
+mirari_SDCARD BOARD
+M:	Enceladus <enc@seynen.net>
+S:	Maintained
+F:	board/freescale/mirari/
+F:	include/configs/mirari.h
+F:	configs/mirari_SDCARD_defconfig

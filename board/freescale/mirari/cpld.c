@@ -104,7 +104,7 @@ int do_cpld(struct cmd_tbl *cmdtp, int flag, int argc, char *const argv[])
 	return rc;
 }
 
-U_BOOT_CMD(
+/*U_BOOT_CMD(
 	cpld, CONFIG_SYS_MAXARGS, 1, do_cpld,
 	"Reset the board or alternate bank",
 	"reset - hard reset to default bank\n"
@@ -112,4 +112,4 @@ U_BOOT_CMD(
 #ifdef DEBUG
 	"cpld dump - display the CPLD registers\n"
 #endif
-	);
+	);*/
