@@ -84,7 +84,7 @@ found:
 	/* optimize cpo for erratum A-009942 */
 	popts->cpo_sample = 0x59;
 #else
-	popts->cpo_sample = 0x54;
+	popts->cpo_sample = 0x4f;				/* board specific value (was 0x54) */
 	popts->half_strength_driver_enable = 0;
 #endif
 	/*
