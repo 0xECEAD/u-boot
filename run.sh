@@ -21,7 +21,11 @@ cat board/freescale/mirari/default_env_strings | sort | ${OUTPATH}/tools/mkenvim
 # data image blob is at 18432 blocks (0x900000 bytes)
 #
 rm -f ${IMGFILE}
+touch ${IMGFILE}
+truncate -s 16M ${IMGFILE}
 dd if=${OUTPATH}/u-boot-with-spl-pbl.bin of=${IMGFILE} bs=512 seek=8 conv=notrunc
 dd if=${OUTPATH}/mirari-env of=${IMGFILE} bs=512 seek=2048 conv=notrunc
+dd if=fsl_fman_ucode_t1040_r1.1_106_4_18.bin of=${IMGFILE} bs=512 seek=2080 conv=notrunc
 #dd if=amigaboot of=${IMGFILE} bs=512 seek=16384 conv=notrunc
 #dd if=dataimage of=${IMGFILE} bs=512 seek=18432 conv=notrunc
+cp ${IMGFILE} /mnt/c/Users/Enceladus/Desktop/

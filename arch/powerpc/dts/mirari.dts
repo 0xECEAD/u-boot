@@ -28,7 +28,7 @@
     fman0: fman@400000 {
         ethernet@e6000 {
             phy-handle = <&phy_rgmii_0>;
-            phy-connection-type = "rgmii";
+            phy-connection-type = "rgmii-id";
         };
         mdio0: mdio@fc000 {
 

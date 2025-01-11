@@ -39,3 +39,4 @@ stdin=usbkbd
 uboot=u-boot.bin
 ubootaddr=0xFFF80000
 hwconfig=fsl_ddr:ctlr_intlv=cacheline,bank_intlv=cs0_cs1;usb1:dr_mode=host,phy_type=utmi;usb2:dr_mode=host,phy_type=utmi
+ethaddr=A0:12:34:56:EE:FF
