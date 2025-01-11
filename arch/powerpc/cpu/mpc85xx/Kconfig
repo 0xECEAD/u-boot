@@ -217,6 +217,8 @@ config TARGET_MIRARI
 	select SUPPORT_SPL
 	select PHYS_64BIT
 	select SYS_L3_SIZE_256KB
+    imply CMD_SATA
+    imply FSL_SATA	
 	imply PANIC_HANG
 
 config TARGET_T2080QDS
